@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: sans-serif
 }
+html{
+    font-size: 16px;
+}
 body{
     width: 100vw;
     overflow-x: hidden;
@@ -14,25 +17,26 @@ header{
 }
 
 nav{
-    padding: 20px 50px;
+    width: 95%;
+    padding: 1.25em 3em;
     color: #ffffff;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 nav>img{
     filter: invert(100%);
 }
 nav>ul{
-    gap: 50px;
+    gap: 3em;
     list-style-type: none;
     display: flex;
     align-items: center;
-    margin: 0 auto;
 }
 
 div.description{
-    padding: 50px 10px;
+    padding: 3em 0.625em;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -40,22 +44,26 @@ div.description{
 }
 
 div.description img{
-    width: 800px;
+    width: 100%;
+}
+
+div.right{
+    flex-basis: 50%;
 }
 
 header div.left>h2{
     white-space: pre-line;
-    margin-left: 40px;
-    font-size: 60px;
-    margin-bottom: 50px;
+    margin-left: 0.66em;
+    font-size: 3.75rem;
+    margin-bottom: 0.8em;
     line-height: 1.4;
 }
 
 header div.left p{
     white-space: pre-line;
-    margin-left: 40px;
+    margin-left: 2em;
     color: #e5daf6;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.4;
 }
 
@@ -66,25 +74,25 @@ section.main{
 }
 
 section.main>div.left{
-    width: 800px;
+    width: 60%;
 }
 
 section.main>div.right h2{
-    margin-top: 100px;
+    margin-top: 2.5em;
     white-space: pre-line;
-    font-size: 40px;
-    margin-bottom: 50px;
+    font-size: 2.5rem;
+    margin-bottom: 1.25em;
 }
 
 h4.feature-head{
-    font-size: 25px;
+    font-size: 2rem;
     font-weight: 600;
 }
 div.feature{
-    margin-bottom: 50px;
+    margin-bottom: 3em;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625em;
 }
 
 p.feature-para{
@@ -97,7 +105,7 @@ footer{
 }
 
 footer>h2{
-    font-size: 30px;
+    font-size: 2rem;
     margin: 0 auto;
     white-space: pre-line;
     text-align: center;
@@ -105,16 +113,16 @@ footer>h2{
 
 div.icons{
     display: flex;
-    margin: 50px auto;
-    gap: 50px;
+    margin: 3em auto;
+    gap: 3em;
 }
 
 div.icon{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    padding: 10px 25px;
+    border-radius: 0.625em;
+    padding: 0.625em 1.5em;
     box-shadow:  4px 4px 3px 3px grey;
 }
 div.icon p{
@@ -123,9 +131,9 @@ div.icon p{
 }
 
 div.icon>h4{
-    font-size: 22px;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.2em;
 }
 .icon-image{
     height: 100px;
@@ -160,7 +168,7 @@ div.icon>h4{
 div.list-item{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.32em;
 }
 
 span.bullet>img{
@@ -180,4 +188,71 @@ button.nav-button{
     outline: none;
     border: none;
     
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 2em;
+    right: 1.5em;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+}
+
+span.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transition: background-color 300ms ease-in-out;
+}
+@media(max-width:500px)
+{
+    html{
+        font-size: 10px;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    div.description{
+        flex-direction: column-reverse;
+    }
+
+    section.main{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.icons{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.icon{
+        width: 60%;
+    }
+
+    div.icon img{
+        width: 50%;
+    }
+
+    div.icon p{
+        white-space: normal;
+    }
+    .circle{
+        height: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+        border-radius: 50%;
+    }
 }
